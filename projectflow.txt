@@ -10,4 +10,4 @@
 7. Run "dvc add data/" again and "git add data.dvc .gitignore"
 8. Run "dvc commit" and "dvc push" to commit changes to dvc. This'll save the first version to the S3 bucket
 9. We then make some changes to the dataset. Add a sample. Then dvc commit and push.
- 
+10. Reverting using "git checkout <commit id>" and "dvc pull". DVC gets the id from git.
