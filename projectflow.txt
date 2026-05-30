@@ -1,0 +1,13 @@
+1. Create a code.py file which will save  csv file in data folder.
+2. Commit files before initialising DVC
+#pip install dvc
+3. Initialise DVC using dvc init(creates .dvcignore .dvc)
+4. Create a S3 folder now for the data(mkdir S3 for now)
+5. We set the dvc origin as the S3 bucket(folder for now) using 
+   "dvc remote add -d myremote S3" {replace S3 with AWS S3 url link}
+6. Now we "dvc add data/" {add specific file name if u only wanna track a single file}
+   Which will ask us to stop tracking using git {"git rm -r --cached data"}
+7. Run "dvc add data/" again and "git add data.dvc .gitignore"
+8. Run "dvc commit" and "dvc push" to commit changes to dvc. This'll save the first version to the S3 bucket
+9. We then make some changes to the dataset. Add a sample. Then dvc commit and push.
+ 
